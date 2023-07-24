@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/footer.css">
+<style>
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+.header-section {
+	background-color: #17a2b8;
+	padding: 30px;
+	color: #fff;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="header-section">
+	<a th:href="@{/gotoDashboard}">DashBoard</a>
+	<h2>Messages You Have Recived</h2>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Course Want to Enroll</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="contact:${contacts}">
+      <td th:text="${contact.name}"></td>
+      <td th:text="${contact.email}"></td>
+      <td th:text="${contact.course}"></td>
+      <td th:text="${contact.message}"></td>
+      <td ><a th:href="@{/changeStatus(name=${contact.name})}" class="btn btn-danger">Close</a></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

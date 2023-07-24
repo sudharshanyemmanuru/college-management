@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Cool Sign-Up Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+	a{
+		color:white;
+		text-decoration:none;
+	}
+	a:hover{
+		color:white;
+		text-decoration:none;
+	}
+    /* Custom CSS */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .header-section {
+      background-color: #17a2b8;
+      padding: 30px;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-section">
+	<a th:href="@{/gotodashboard}"> Home </a>
+    <h2>Attendance Details</h2>
+  </div>
+  <div class="container">
+	<div class="card">
+  <div class="card-body">
+    <h6 class="card-title" th:text="'subject Name : '+${SubName}"></h6>
+	<h6 class="card-title" th:text="'Subject code : '+${subId}"></h6>
+	<h6 class="card-title" th:text="'Roll Num     : '+${RollNum}"></h6>
+	
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Student Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="attend:${attendances}">
+            <td th:text="${attend.date}"></td>
+            <td th:text="${attend.status}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Cool Login Page</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/footer.css">
+
+<style type="text/css">
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+body {
+	background-color: #f8f9fa;
+}
+
+.header-section {
+	background-color: #17a2b8;
+	padding: 30px;
+	color: #fff;
+	text-align: center;
+}
+
+.login-section {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	max-width: 400px;
+	margin: 0 auto;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1s, transform 1s;
+}
+
+.fade-in {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.form-group label {
+	font-weight: bold;
+}
+
+.btn-login {
+	background-color: #17a2b8;
+	border-color: #17a2b8;
+	color: #fff;
+}
+
+.btn-login:hover {
+	background-color: #138496;
+	border-color: #138496;
+}
+.footer{
+	margin-top:100px;
+}
+</style>
+</head>
+<body>
+	<div class="header-section">
+		<a th:href="@{/home}"> Home </a>
+		<h2>Login Here</h2>
+	</div>
+	<div class="container">
+		<div class="login-section">
+			<form th:action="@{/doLogin}" method="post">
+				<div class="form-group">
+					<label for="username">Login As:</label> <select name="role">
+						<option>Student</option>
+						<option>Faculty</option>
+						<option>Admin</option>
+					</select><br> <label for="username">Username</label> <input type="text"
+						class="form-control" id="username" name="userName"
+						placeholder="Enter your username">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label> <input type="password"
+						class="form-control" id="password" name="password"
+						placeholder="Enter your password">
+				</div>
+				<button type="submit" class="btn btn-login">Login</button>
+			</form>
+		</div>
+
+	</div>
+	<div th:replace="footer::footer" class="footer"></div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+    // jQuery Animation
+    $(document).ready(function() {
+      $(".login-section").addClass("fade-in");
+    });
+  </script>
+</body>
+</html>

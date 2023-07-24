@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/footer.css">
+<style>
+body {
+	background-color: #f8f9fa;
+}
+
+.section {
+	padding: 100px 0;
+}
+
+.section h2 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.section p {
+	text-align: center;
+	font-size: 18px;
+	color: #555;
+}
+
+.image-section {
+	width: 100%;
+	background-color: #fff;
+}
+
+.image-section img {
+	width: 100%;
+	height: auto;
+}
+
+.animation-element {
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.fade-in {
+	opacity: 1;
+}
+
+.navbar {
+	background-color: #17a2b8;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+	color: #fff;
+}
+
+.btn-login, .btn-signup {
+	background-color: transparent;
+	border-color: transparent;
+	color: black;
+	margin-left: 20px
+}
+
+.btn-login:hover, .btn-signup:hover {
+	background-color: transparent;
+	color: black;
+}
+
+.card {
+	margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<h4>Eazy Bytes College</h4>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item"><a th:href="@{/login}"class="nav-link btn btn-login">Login</a>
+			</li>
+			
+		</ul>
+	</nav>
+	<section class="image-section" style="width: 100%">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<img
+						src="/assets/college-image.jpg"
+						alt="College Image">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<center>
+			<h3>College Infrastructure</h3>
+		</center>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<img
+							src="/assets/library.jpg"
+							class="card-img-top" alt="our-libray">
+						<div class="card-body">
+							<center>
+								<h5>College Libraray</h5>
+							</center>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content. Some
+								quick example text to build on the card title and make up the
+								bulk of the card's</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<img
+							src="/assets/college-canteen-1.jpg-org"
+							class="card-img-top" alt="our-libray">
+						<div class="card-body">
+							<center>
+								<h5>College Canteen</h5>
+							</center>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content. Some
+								quick example text to build on the card title and make up the
+								bulk of the card's</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<img
+							src="/assets/computer-lab.webp"
+							class="card-img-top" alt="our-libray">
+						<div class="card-body">
+							<center>
+								<h5>Computer Labs</h5>
+							</center>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content. Some
+								quick example text to build on the card title and make up the
+								bulk of the card's example text to build on the</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<img
+							src="/assets/college-ground.webp"
+							class="card-img-top" alt="our-libray">
+						<div class="card-body">
+							<center>
+								<h5>College Ground</h5>
+							</center>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content. Some
+								quick example text to build on the card title and make up the
+								bulk of the card's</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<img
+							src="/assets/college-bus.webp"
+							class="card-img-top" alt="our-libray">
+						<div class="card-body">
+							<center>
+								<h5>Bus Facility</h5>
+							</center>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content. Some
+								quick example text to build on the card title and make up the
+								bulk of the card's</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<img
+							src="/assets/class-room.jfif"
+							class="card-img-top" alt="our-libray">
+						<div class="card-body">
+							<center>
+								<h5>Class Rooms</h5>
+							</center>
+							<p class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content. Some
+								quick example text to build on the card title and make up the
+								bulk of the card's</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">B.Tech</div>
+						<div class="card-body">
+							<h5 class="card-title">Courses Offered :</h5>
+							<ul>
+								<li>CSE</li>
+								<li>ECE</li>
+								<li>EEE</li>
+								<li>MECH</li>
+								<li>CIVIL</li>
+								<ul>
+									<a th:href="@{/contact}" class="btn btn-primary">Take
+										Admission</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">M.Tech</div>
+						<div class="card-body">
+							<h5 class="card-title">Specilisations :</h5>
+							<ul>
+								<li>AI For CSE Graduates</li>
+								<li>VLSI For ECE Graduates</li>
+								<li>Power Electronics</li>
+								<li>Embeded Systems</li>
+								<li>IoT</li>
+								<ul>
+									<a th:href="@{/contact}" class="btn btn-primary">Take
+										Admission</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">MBA</div>
+						<div class="card-body">
+							<h5 class="card-title">Couserses Offered</h5>
+							<ul>
+								<li>Bussiness</li>
+								<li>Economics</li>
+								<li>Micro Economics</li>
+								<li>English</li>
+								<li>Foregin English</li>
+								<ul>
+									<a th:href="@{/contact}" class="btn btn-primary">Take
+										Admission</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">MCA</div>
+						<div class="card-body">
+							<h5 class="card-title">Courses Offered</h5>
+							<ul>
+								<li>Bussiness</li>
+								<li>Economics</li>
+								<li>Micro Economics</li>
+								<li>English</li>
+								<li>Foregin English</li>
+								<ul>
+									<a th:href="@{/contact}" class="btn btn-primary">Take
+										Admission</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">Ph.D</div>
+						<div class="card-body">
+							<h5 class="card-title">Specili</h5>
+							<ul>
+								<li>Bussiness</li>
+								<li>Economics</li>
+								<li>Micro Economics</li>
+								<li>English</li>
+								<li>Foregin English</li>
+								<ul>
+									<a th:href="@{/contact}" class="btn btn-primary">Take
+										Admission</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">Diploma</div>
+						<div class="card-body">
+							<h5 class="card-title">Specilisations :</h5>
+							<ul>
+								<li>AI For CSE Graduates</li>
+								<li>VLSI For ECE Graduates</li>
+								<li>Power Electronics</li>
+								<li>Embeded Systems</li>
+								<li>IoT</li>
+								<ul>
+									<a th:href="@{/contact}" class="btn btn-primary">Take
+										Admission</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div th:replace="footer::footer"></div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		// jQuery and JavaScript Animation
+		$(document).ready(function() {
+			$(window).scroll(function() {
+				$(".animation-element").each(function() {
+					var position = $(this).offset().top;
+					var windowHeight = $(window).height();
+					var scrollPosition = $(window).scrollTop();
+
+					if (position < scrollPosition + windowHeight) {
+						$(this).addClass("fade-in");
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

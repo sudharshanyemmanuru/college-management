@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+	a{
+		color:white;
+		text-decoration:none;
+	}
+	a:hover{
+		color:white;
+		text-decoration:none;
+	}
+    /* Custom CSS */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .header-section {
+      background-color: #17a2b8;
+      padding: 30px;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+	<div class="header-section">
+		<a th:href="@{/gotodashboard}"> Home </a>
+		<h2>Your Assignments</h2>
+	</div>
+	<li class="alert alert-danger" role="alert" th:if="${!#strings.isEmpty(notSavedMessage)}" th:text="${notSavedMessage}"></li>
+	<li class="alert alert-success" role="alert" th:if="${!#strings.isEmpty(savedMessage)}" th:text="${savedMessage}"></li>
+	<div class="container">
+		<div class="card mb-3">
+			<div class="card-header">
+				<h4 class="card-title" th:text="'Subject: '+${subjectName}"></h4>
+				<p class="card-text" th:text="'Assignment Number: '+${Num}">Assignment
+					Number: 12345</p>
+			</div>
+			<form th:action="@{/addSubmission(assignNumber=${Num},subjectId=${subjectId},subjectName=${subjectName})}" method="post" >
+				<div class="card-body">
+					<div class="question-section" th:each="question,status:${questions}">
+						<div class="question">
+							<p class="question-text"
+								th:text="'Question '+${status.index+1}+' : '+${question.question}"></p>
+						</div>
+						<div class="answer-section">
+							<textarea class="form-control" rows="6"
+								placeholder="Enter your answer" th:name="'ans-'+${status.index+1}"></textarea>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-primary submit-assignment-btn"
+						value="Submit Assignment" />
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

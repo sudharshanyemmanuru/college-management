@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/footer.css">
+<style type="text/css">
+html {
+	scroll-behavior: smooth;
+}
+
+.header-section {
+	background-color: #17a2b8;
+	padding: 30px;
+	color: #fff;
+	text-align: center;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+#mycont {
+	border: 1px soild black;
+	border-radius: 10px;
+	padding: 20px;
+}
+</style>
+</head>
+<body>
+	<div class="header-section">
+		<a th:href="@{/gotoDashboard}"> DashBoard </a>
+		<h2>Fill Details</h2>
+	</div>
+	<div class="container" id="mycont">
+		<li class="alert alert-danger" role="alert"
+			th:each="error: ${#fields.errors('studentDetails.*')}" th:text="${error}">
+
+		</li>
+		<li class="alert alert-success" role="alert"
+			th:if="${!#strings.isEmpty(studentStatus)}" th:text="${studentStatus}"></li>
+		<form class="row g-3" th:Object="${studentDetails}"
+			th:action="@{/saveStudent}" method="post">
+			<div class="col-md-6">
+				<label for="inputEmail4" class="form-label">Name of Student*</label>
+				<input type="text" class="form-control" th:field="*{name}"
+					 placeholder="Student Name">
+			</div>
+			<div class="col-md-6">
+				<label for="inputPassword4" class="form-label">Department*</label> <input
+					type="text" class="form-control" th:field="*{department}"
+					 placeholder="Enter Department Name">
+			</div>
+			<div class="col-12">
+				<label for="inputAddress" class="form-label">Programe*</label> <input
+					type="text" class="form-control" th:field="*{programme}"
+					placeholder="Enter the programe">
+			</div>
+			<div class="col-12">
+				<label for="inputAddress2" class="form-label">Roll Number *</label>
+				<input type="text" class="form-control" th:field="*{rollNum}"
+					 placeholder="Enter Roll Number">
+			</div>
+			<div class="col-4">
+				<label for="inputAddress2" class="form-label">Home Town*</label> <input
+					type="text" class="form-control" th:field="*{homeTown}"
+					 placeholder="Home Town Name">
+			</div>
+			<div class="col-4">
+				<label for="inputAddress2" class="form-label">Address *</label> <input
+					type="text" class="form-control" th:field="*{address}"
+					 placeholder="current address">
+			</div>
+			<div class="col-md-4">
+				<label for="inputCity" class="form-label">Zip Code*</label> <input
+					type="text" class="form-control" th:field="*{zipCode}"
+					 placeholder="Pin code">
+			</div>
+			<div class="col-md-4">
+				<label for="inputState" class="form-label">State</label> <input
+					type="text" class="form-control" th:field="*{state}" 
+					placeholder="State">
+			</div>
+			<div class="col-md-4">
+				<label for="inputZip" class="form-label">Contact Number*</label> <input
+					type="text" class="form-control" th:field="*{contact}"
+					 placeholder="Contact Number">
+			</div>
+			<div class="col-md-4">
+				<label for="inputZip" class="form-label">Adhar Number*</label> <input
+					type="text" class="form-control" th:field="*{adharNum}"
+					 placeholder="Adhar Number">
+			</div>
+			<div class="col-md-4">
+				<label for="inputZip" class="form-label">Pan Number*</label> <input
+					type="text" class="form-control" th:field="*{panNum}" 
+					placeholder="Pan Number">
+			</div>
+			<div class="col-md-4">
+				<label for="inputZip" class="form-label">User Name*</label> <input
+					type="text" class="form-control" th:field="*{userName}"
+					 placeholder="user Name">
+			</div>
+			<div class="col-md-4">
+				<label for="inputZip" class="form-label">Password*</label> <input
+					type="password" class="form-control" th:field="*{password}"
+					 placeholder="Password">
+			</div>
+			<div class="col-md-4">
+				<label for="inputZip" class="form-label">Batch*</label> <input
+					type="text" class="form-control" th:field="*{batch}" 
+					placeholder="Enter the Batch">
+			</div>
+			<div class="col-md-4">
+				<label for="inputZip" class="form-label">Section*</label> <input
+					type="text" class="form-control" th:field="*{section}"
+					 placeholder="Enter the Section">
+			</div>
+
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary">Save Details</button>
+			</div>
+		</form>
+	</div>
+	<div th:replace="footer::footer" class="footer"></div>
+</body>
+</html>

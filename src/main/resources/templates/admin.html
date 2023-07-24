@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/footer.css">
+<title>Insert title here</title>
+<style type="text/css">
+a{
+	color:white;
+	text-decoration: none;
+}
+a:hover{
+	color:white;
+	text-decoration: none;
+}
+.header-section {
+	background-color: #17a2b8;
+	padding: 30px;
+	color: #fff;
+	text-align: center;
+	margin: 0px;
+}
+
+.section {
+	padding: 100px 0;
+}
+</style>
+</head>
+<body>
+	<div class="header-section">
+		<h4 th:text="'Welcome '+${uname}"></h4>
+		<h2>Dash Board</h2>
+		<a th:href="@{/logout}">Logout</a>
+	</div>
+	<section class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Messages</h5>
+							<p class="card-text">You can see the people who contacted you
+								for joining in college by clicking here.</p>
+							<a th:href="@{/showMessages}" class="btn btn-primary">Click-Here</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Join Faculty</h5>
+							<p class="card-text">You can Join the Faculty by Filling
+								required details into the our college database.</p>
+							<a th:href="@{/joinFaculty}" class="btn btn-primary">Click-Here</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Join Students</h5>
+							<p class="card-text">You can Join the Students by Filling
+								required details into the our college database.</p>
+							<a th:href="@{/joinStudent}" class="btn btn-primary">Click-Here</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+	<div th:replace="footer::footer"></div>
+</body>
+</html>

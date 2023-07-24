@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Cool Sign-Up Page</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+/* Custom CSS */
+body {
+	background-color: #f8f9fa;
+}
+
+.header-section {
+	background-color: #17a2b8;
+	padding: 30px;
+	color: #fff;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div class="header-section">
+		<a th:href="@{/gotodashboard}"> Home </a>
+		<h2>Your Assignments</h2>
+	</div>
+	<div class="container">
+		<div class="card p-4" th:each="assignment:${assignments}">
+			<div class="row">
+				<div class="col-9">
+					<div class="d-flex align-items-center">
+						<div class="mr-4">
+							<h5 class="mb-0">Assignment Number:</h5>
+							<p class="mb-0" th:text="${assignment.assignmentNum}"></p>
+						</div>
+						<div>
+							<h5 class="mb-0">Subject Name :</h5>
+							<p class="mb-0" th:text="${assignment.subName}"></p>
+						</div>
+						<div>
+							<h5 class="mb-0">Section:</h5>
+							<p class="mb-0" th:text="${assignment.section}"></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 d-flex align-items-center justify-content-end">
+					<form th:action="@{/openAssignment(subjectName=${assignment.subName},assignNum=${assignment.assignmentNum},subjectId=${assignment.subId})}" method="post">
+						<input type="submit" class="btn btn-primary" value="Open Assignment"/>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

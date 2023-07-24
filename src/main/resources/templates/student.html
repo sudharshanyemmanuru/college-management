@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/footer.css">
+<style type="text/css">
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.header-section {
+	background-color: #17a2b8;
+	padding: 30px;
+	color: #fff;
+	text-align: center;
+	margin: 0px;
+}
+.container {
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background-color: #f0f0f0;
+	border-radius: 10px;
+}
+
+.dropdown {
+	margin-bottom: 30px;
+}
+
+.dropdown select {
+	width: 400px; /* Set the desired width */
+}
+</style>
+</head>
+<body>
+	<div class="header-section">
+		<h4 th:text="'Welcome '+${uname}"></h4>
+		<h2>Dash Board</h2>
+		<a th:href="@{/logout}">Logout</a>
+	</div>
+	<div class="container">
+		<form th:action="@{/loadSubjecst}" method="post">
+			<div class="card">
+				<div class="dropdown">
+					<select class="form-control" name="yearSem">
+						<option>Select Year</option>
+						<option>1-1</option>
+						<option>1-2</option>
+						<option>2-1</option>
+						<option>2-2</option>
+						<option>3-1</option>
+						<option>3-2</option>
+						<option>4-1</option>
+						<option>4-2</option>
+					</select>
+				</div>
+				<button class="btn btn-primary" id="loadDetails">Load
+					Subjects</button>
+			</div>
+		</form>
+	</div>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			// Function to handle the click event of the Load Details button
+			$("#loadDetails").click(function() {
+				var department = $("#selectDepartment").val();
+				var year = $("#selectYear").val();
+				var sem = $("#selectSem").val();
+
+				// Perform actions with the selected values
+				// ...
+			});
+		});
+	</script>
+	<!-- Bootstrap JS -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+</body>
+</html>

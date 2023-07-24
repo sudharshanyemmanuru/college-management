@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/footer.css">
+<style type="text/css">
+.header-section {
+	background-color: #17a2b8;
+	padding: 30px;
+	color: #fff;
+	text-align: center;
+	margin: 0px;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+	<div class="header-section">
+		<h4 th:text="'Welcome '+${uname}"></h4>
+		<h2>Dash Board</h2>
+		<a th:href="@{/goBack}" id="logut">Dashboard</a>
+	</div>
+	<body>
+	<li class="alert alert-success" role="alert"
+			th:if="${!#strings.isEmpty(assignmentSaved)}" th:text="${assignmentSaved}"></li>
+  <div class="container">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h4 class="card-title">Assignment Upload</h4>
+      <form th:action="@{/saveAssignment}" method="post">
+        <div class="form-group">
+          <label for="assignment-number">Assignment Number</label>
+          <input type="text" class="form-control" id="assignment-number" name="assignmentNum" placeholder="Enter Assignment Number">
+        </div>
+        <div class="form-group">
+          <label for="question">Questions</label>
+          <textarea class="form-control" id="question" rows="5" name="questions" placeholder="Enter Questions"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-upload mr-2"></i> Upload Assignment
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+	
+</body>
+</html>

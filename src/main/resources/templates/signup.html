@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Cool Sign-Up Page</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/footer.css">
+<style>
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+/* Custom CSS */
+body {
+	background-color: #f8f9fa;
+}
+
+.header-section {
+	background-color: #17a2b8;
+	padding: 30px;
+	color: #fff;
+	text-align: center;
+}
+
+.signup-section {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	max-width: 400px;
+	margin: 0 auto;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 1s, transform 1s;
+}
+
+.fade-in {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.form-group label {
+	font-weight: bold;
+}
+
+.btn-signup {
+	background-color: #17a2b8;
+	border-color: #17a2b8;
+	color: #fff;
+}
+
+.btn-signup:hover {
+	background-color: #138496;
+	border-color: #138496;
+}
+</style>
+</head>
+<body>
+	<div class="header-section">
+		<a href="/home"> Home </a>
+		<h2>Sign Up Here</h2>
+	</div>
+	<div class="signup-section">
+		<form>
+			<div class="form-group">
+				<label for="username">Username</label> <input type="text"
+					class="form-control" id="username"
+					placeholder="Enter your username">
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label> <input type="email"
+					class="form-control" id="email" placeholder="Enter your email">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label> <input type="password"
+					class="form-control" id="password"
+					placeholder="Enter your password">
+			</div>
+			<button type="submit" class="btn btn-signup">Sign Up</button>
+		</form>
+	</div>
+	<div th:replace="footer::footer"></div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+    // jQuery Animation
+    $(document).ready(function() {
+      $(".signup-section").addClass("fade-in");
+    });
+  </script>
+</body>
+</html>
